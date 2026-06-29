@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,53 +22,85 @@
     }
   </script>
   <style>
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
-<body class="bg-brandNavy min-h-screen flex items-center justify-center p-4 relative overflow-hidden select-none">
 
-  <div class="absolute w-72 h-72 rounded-full bg-brandTeal/20 blur-3xl top-1/4 left-1/3 animate-pulse"></div>
-  <div class="absolute w-80 h-80 rounded-full bg-brandRust/15 blur-3xl bottom-1/4 right-1/3"></div>
+<body class="bg-brandNavy">
 
-  <div class="w-full max-w-sm rounded-3xl p-6 backdrop-blur-md bg-white/3 border border-white/8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] z-10">
-  
-    <div class="mb-5 mt-2 px-2 text-right">
-      <div id="calc-history" class="text-sm text-brandCream/40 font-mono tracking-wide min-h-6 mb-1"></div>
-      <div id="screen" class="text-5xl font-light text-brandCream font-mono tracking-tight overflow-hidden whitespace-nowrap no-scrollbar">0</div>
-    </div>
+  <h1 class="text-center p-3 mt-5 text-brandOrange text-5xl font-bold">Calculator</h1>
+  <div class="p-2 flex items-center justify-center relative overflow-hidden select-none">
+    <div class="absolute w-72 h-72 rounded-full bg-brandTeal/20 blur-3xl top-1/4 left-1/3 animate-pulse"></div>
+    <div class="absolute w-80 h-80 rounded-full bg-brandRust/15 blur-3xl bottom-1/4 right-1/3"></div>
 
-    <hr class="border-white/8 my-4" />
+    <div
+      class="w-full max-w-sm rounded-3xl p-6 backdrop-blur-md bg-white/3 border border-white/8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] z-10">
 
-    <div id="keypad" class="grid grid-cols-4 gap-3.5">
-      
-      <button class="h-16 rounded-2xl bg-brandTeal/80 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandTeal active:scale-95 transition-all shadow-sm">C</button>
-      <button class="h-16 rounded-2xl bg-brandRust/60 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandRust/80 active:scale-95 transition-all shadow-sm">&plus;/&minus;</button>
-      <button class="h-16 rounded-2xl bg-brandRust/60 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandRust/80 active:scale-95 transition-all shadow-sm">&percnt;</button>
-      <button class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&divide;</button>
+      <div class="mb-5 mt-2 px-2 text-right">
+        <div id="calc-history" class="text-sm text-brandCream/40 font-mono tracking-wide min-h-6 mb-1"></div>
+        <div id="screen"
+          class="text-5xl font-light text-brandCream font-mono tracking-tight overflow-hidden whitespace-nowrap no-scrollbar">
+          0</div>
+      </div>
 
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">7</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">8</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">9</button>
-      <button class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&times;</button>
+      <hr class="border-white/8 my-4" />
 
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">4</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">5</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">6</button>
-      <button class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&minus;</button>
+      <div id="keypad" class="grid grid-cols-4 gap-3.5">
 
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">1</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">2</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">3</button>
-      <button class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&plus;</button>
+        <button
+          class="h-16 rounded-2xl bg-brandTeal/80 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandTeal active:scale-95 transition-all shadow-sm">C</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/60 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandRust/80 active:scale-95 transition-all shadow-sm">&plus;/&minus;</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/60 text-brandCream font-semibold text-xl backdrop-blur-sm hover:bg-brandRust/80 active:scale-95 transition-all shadow-sm">&percnt;</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&divide;</button>
 
-      <button class="col-span-2 h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all px-6 text-left">0</button>
-      <button class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">.</button>
-      <button class="h-16 rounded-2xl bg-brandOrange text-brandNavy font-bold text-2xl shadow-lg shadow-brandOrange/20 hover:bg-brandOrange/90 active:scale-95 transition-all">&equals;</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">7</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">8</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">9</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&times;</button>
 
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">4</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">5</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">6</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&minus;</button>
+
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">1</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">2</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">3</button>
+        <button
+          class="h-16 rounded-2xl bg-brandRust/80 text-brandCream font-bold text-2xl backdrop-blur-sm hover:bg-brandRust active:scale-95 transition-all shadow-sm">&plus;</button>
+
+        <button
+          class="col-span-2 h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all px-6 text-left">0</button>
+        <button
+          class="h-16 rounded-2xl bg-white/4 text-brandCream font-medium text-xl border border-white/3 hover:bg-white/1 active:scale-95 transition-all">.</button>
+        <button
+          class="h-16 rounded-2xl bg-brandOrange text-brandNavy font-bold text-2xl shadow-lg shadow-brandOrange/20 hover:bg-brandOrange/90 active:scale-95 transition-all">&equals;</button>
+
+      </div>
     </div>
   </div>
-
   <script src="app.js"></script>
 </body>
+
 </html>
